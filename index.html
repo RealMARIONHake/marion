@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MARION.com</title>
+    <title>STOP Message</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,7 +11,7 @@
             margin-top: 100px;
         }
         .stop-message {
-            display: none;
+            display: none;  /* Initially hidden */
             color: red;
             font-size: 48px;
             font-weight: bold;
@@ -24,16 +24,20 @@
     <div class="stop-message" id="stopMessage">STOP</div>
 
     <script>
-        (function() {
-            const element = new Image();
-            Object.defineProperty(element, 'id', {
-                get: function() {
-                    document.getElementById("stopMessage").style.display = 'block';
-                    alert('STOP');
-                }
-            });
-            console.log(element);
-        })();
+        // Detect if the console is opened
+        const stopMessage = document.getElementById("stopMessage");
+
+        const detectConsoleOpen = () => {
+            const start = new Date();
+            debugger; // This will cause a breakpoint
+            const end = new Date();
+            if (end - start > 100) { // If more than 100ms passes, console is open
+                stopMessage.style.display = 'block'; // Show the STOP message
+                alert('STOP');
+            }
+        };
+
+        setInterval(detectConsoleOpen, 1000); // Check every second
     </script>
 
 </body>
