@@ -1,14 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="el">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" type="x-icon" href="Untitled image (1).ico">
-    <title>Home</title>
-    <h1>Welcome to marion</h1>
-       <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STOP Message</title>
+    <title>MARION.com</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,19 +19,20 @@
     </style>
 </head>
 <body>
-        <a href="download.html"><button>Download</button></a>
-        <div class="stop-message" id="stopMessage">STOP</div>
+
+    <h1>Welcome to the site</h1>
+    <div class="stop-message" id="stopMessage">STOP</div>
 
     <script>
         (function() {
-            const STOP = new Image();
+            const element = new Image();
             Object.defineProperty(element, 'id', {
                 get: function() {
                     document.getElementById("stopMessage").style.display = 'block';
                     alert('STOP');
                 }
             });
-            console.log(STOP);
+            console.log(element);
         })();
     </script>
 
