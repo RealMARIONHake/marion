@@ -24,20 +24,20 @@
     <div class="stop-message" id="stopMessage">STOP</div>
 
     <script>
-        // Detect if the console is opened
         const stopMessage = document.getElementById("stopMessage");
 
-        const detectConsoleOpen = () => {
-            const start = new Date();
-            debugger; // This will cause a breakpoint
-            const end = new Date();
-            if (end - start > 100) { // If more than 100ms passes, console is open
+        // Function to check if the console is open
+        function checkConsole() {
+            const startTime = performance.now();
+            console.log('%c', 'color: transparent; font-size: 20px;'); // Empty log to increase time if console is open
+            const endTime = performance.now();
+            if (endTime - startTime > 100) { // Threshold time to determine if console is open
                 stopMessage.style.display = 'block'; // Show the STOP message
-                alert('STOP');
+                alert('STOP'); // Show an alert
             }
-        };
+        }
 
-        setInterval(detectConsoleOpen, 1000); // Check every second
+        setInterval(checkConsole, 1000); // Check every second
     </script>
 
 </body>
