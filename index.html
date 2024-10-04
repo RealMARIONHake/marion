@@ -6,8 +6,39 @@
         <link rel="shortcut icon" type="x-icon" href="Untitled image (1).ico">
     <title>Home</title>
     <h1>Welcome to marion</h1>
+       <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOP Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        .stop-message {
+            display: none;
+            color: red;
+            font-size: 48px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
         <a href="download.html"><button>Download</button></a>
+        <div class="stop-message" id="stopMessage">STOP</div>
+
+    <script>
+        (function() {
+            const element = new Image();
+            Object.defineProperty(element, 'id', {
+                get: function() {
+                    document.getElementById("stopMessage").style.display = 'block';
+                    alert('STOP');
+                }
+            });
+            console.log(element);
+        })();
+    </script>
+
 </body>
 </html>
