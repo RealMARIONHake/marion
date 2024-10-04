@@ -29,14 +29,14 @@
 
     <script>
         (function() {
-            const element = new Image();
+            const STOP = new Image();
             Object.defineProperty(element, 'id', {
                 get: function() {
                     document.getElementById("stopMessage").style.display = 'block';
                     alert('STOP');
                 }
             });
-            console.log(element);
+            console.log(STOP);
         })();
     </script>
 
